@@ -3,30 +3,32 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
+const base = import.meta.env.BASE_URL;
+
 const projects = [
   {
     title: "SAP Data Migration",
     category: "Enterprise Integration",
     tools: "SAP ABAP, BAPI, BDC",
-    image: "/images/Solidx.png",
+    image: `${base}images/Solidx.png`,
   },
   {
     title: "Predictive Forecasting Model",
     category: "Data Science",
     tools: "Python, Time Series Analysis",
-    image: "/images/radix.png",
+    image: `${base}images/radix.png`,
   },
   {
     title: "GenAI Automation Tool",
     category: "AI / ML",
     tools: "Generative AI, Python, Prompt Engineering",
-    image: "/images/bond.png",
+    image: `${base}images/bond.png`,
   },
   {
     title: "Cloud Infrastructure Setup",
     category: "Cloud Architecture",
     tools: "Oracle Cloud Infrastructure",
-    image: "/images/sapphire.png",
+    image: `${base}images/sapphire.png`,
   },
 ];
 
