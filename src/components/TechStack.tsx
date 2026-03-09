@@ -11,18 +11,53 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+const skills = [
+  { name: "Python", color: "#3776AB" },
+  { name: "SQL", color: "#4479A1" },
+  { name: "Machine\nLearning", color: "#FF6F00" },
+  { name: "Generative\nAI", color: "#00A67E" },
+  { name: "Pandas", color: "#150458" },
+  { name: "Scikit\nLearn", color: "#F7931E" },
+  { name: "Power BI", color: "#F2C811" },
+  { name: "Git", color: "#F05032" }
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+let textures: THREE.Texture[] = [];
+if (typeof document !== "undefined") {
+  const createSkillTexture = (skill: { name: string, color: string }) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 512;
+    canvas.height = 512;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return new THREE.Texture();
+
+    ctx.fillStyle = skill.color;
+    ctx.fillRect(0, 0, 512, 512);
+
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.4)";
+    ctx.lineWidth = 30;
+    ctx.strokeRect(15, 15, 482, 482);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    const lines = skill.name.split("\n");
+    if (lines.length === 1) {
+      ctx.font = "bold 90px sans-serif";
+      ctx.fillText(lines[0], 256, 256);
+    } else {
+      ctx.font = "bold 80px sans-serif";
+      ctx.fillText(lines[0], 256, 210);
+      ctx.fillText(lines[1], 256, 310);
+    }
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  };
+  textures = skills.map(createSkillTexture);
+}
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 

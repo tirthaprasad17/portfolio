@@ -6,11 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Full Stack Developer with 4+ years of experience building scalable web
-          applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
-          in microservices architecture, CMS development, and low-code platforms.
-          Passionate about creating high-performance, production-ready solutions
-          from concept to deployment.
+          Data Science postgraduate with experience in data analysis, machine learning, and enterprise data systems. Skilled in Python, SQL, and data visualization for extracting insights from large datasets. Experienced in exploratory data analysis, predictive modeling, and Generative AI concepts including RAG, LangChain, and Transformers. Passionate about applying data-driven and AI solutions to solve real-world business problems.
         </p>
       </div>
     </div>
