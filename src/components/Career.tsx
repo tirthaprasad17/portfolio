@@ -15,6 +15,18 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
+                <h4>Trainee Developer</h4>
+                <h5>Rezoomex</h5>
+              </div>
+              <h3>2025</h3>
+            </div>
+            <p>
+              Working as a Trainee Developer at Rezoomex, contributing to software development projects and gaining hands-on experience in a professional development environment.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
                 <h4>Class Representative</h4>
                 <h5>MIT World Peace University</h5>
               </div>
